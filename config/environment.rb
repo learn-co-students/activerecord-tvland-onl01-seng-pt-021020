@@ -1,6 +1,8 @@
 require "bundler/setup"
 
 require "sinatra/activerecord"
+# require "rails_erd/diagram/graphviz"
+
 
 Bundler.require
 
@@ -8,3 +10,5 @@ Dir[File.join(File.dirname(__FILE__), "../app/models", "*.rb")].each {|f| requir
 
 connection_details = YAML::load(File.open('config/database.yml'))
 ActiveRecord::Base.establish_connection(connection_details)
+
+# RailsERD::Diagram::Graphviz.create
